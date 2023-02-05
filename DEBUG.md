@@ -19,7 +19,8 @@ fix missing deps in the virtual env <- TODO: get rid of dependency on numpy
 install deps, attach to mopidy installation in virtual env
 `python setup.py develop`
 
-run/debug mopidy in virtual env by hitting F5
+run/debug mopidy in virtual env by hitting F5, or manually
+`mopidy -vv -o http/port=5000 -o http/hostname=0.0.0.0`
 
 GPIO permissions (if missing)
 /etc/udev/rules.d/local.rules
