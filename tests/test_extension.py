@@ -1,7 +1,7 @@
 from unittest import mock
 
-from mopidy_pidi import Extension
-from mopidy_pidi import frontend as frontend_lib
+from mopidy_orangepi_pidi import Extension
+from mopidy_orangepi_pidi import frontend as frontend_lib
 
 
 def test_get_default_config():
@@ -9,7 +9,7 @@ def test_get_default_config():
 
     config = ext.get_default_config()
 
-    assert "[pidi]" in config
+    assert "[orangepi-pidi]" in config
     assert "enabled = true" in config
 
 

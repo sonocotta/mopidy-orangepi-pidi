@@ -2,9 +2,7 @@ include CHANGELOG.rst
 include LICENSE
 include MANIFEST.in
 include README.rst
-include mopidy_pidi/ext.conf
+include mopidy_orangepi_pidi/ext.conf
 include tox.ini
 
 recursive-include tests *.py
-
-recursive-include .circleci *

@@ -17,15 +17,16 @@ logger = logging.getLogger(__name__)
 
 class PiDiConfig:
     def __init__(self, config=None):
-        self.rotation = config.get("rotation", 90)
-        self.spi_port = 0
-        self.spi_chip_select_pin = 1
-        self.spi_data_command_pin = 9
+        self.rotation = config.get("rotation", 0)
+        self.spi_port = config.get("spi_port", 0)
+        self.spi_chip_select_pin = config.get("spi_chip_select_pin", 0)
+        self.spi_data_command_pin = config.get("spi_data_command_pin", 27)
+        self.spi_reset_pin = config.get("spi_reset_pin", 17)
+        self.backlight_pin = config.get("backlight_pin", 22)
+        self.width = config.get("width", 0)
+        self.height = config.get("height", 0)        
         self.spi_speed_mhz = 80
-        self.backlight_pin = 13
-        self.size = 240
         self.blur_album_art = True
-
 
 class PiDiFrontend(pykka.ThreadingActor, core.CoreListener):
     def __init__(self, config, core):
@@ -170,11 +171,11 @@ class PiDi:
     def __init__(self, config):
         self.config = config
         self.cache_dir = Extension.get_data_dir(config)
-        self.display_config = PiDiConfig(config["pidi"])
+        self.display_config = PiDiConfig(config["orangepi-pidi"])
         self.display_class = Extension.get_display_types()[
-            self.config["pidi"]["display"]
+            self.config["orangepi-pidi"]["display"]
         ]
-        self.idle_timeout = config["pidi"].get("idle_timeout", 0)
+        self.idle_timeout = config["orangepi-pidi"].get("idle_timeout", 0)
 
         self._brainz = Brainz(cache_dir=self.cache_dir)
         self._display = self.display_class(self.display_config)

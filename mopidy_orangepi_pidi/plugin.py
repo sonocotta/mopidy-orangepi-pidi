@@ -3,7 +3,8 @@ class Display:
 
     def __init__(self, args=None):
         """Initialise a new display."""
-        self._size = args.size
+        self._width = args.width
+        self._height = args.height
         self._title = ""
         self._shuffle = False
         self._repeat = False
