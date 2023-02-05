@@ -5,15 +5,14 @@ import pkg_resources
 
 from mopidy import config, ext
 
-__version__ = pkg_resources.get_distribution("mopidy_pidi").version
+__version__ = pkg_resources.get_distribution("Mopidy.OrangePi.Pidi").version
 
 logger = logging.getLogger(__name__)
 
-
 class Extension(ext.Extension):
 
-    dist_name = "Mopidy-PiDi"
-    ext_name = "pidi"
+    dist_name = "Mopidy-PiDi-Opi"
+    ext_name = "orangepi-pidi"
     version = __version__
 
     @classmethod
@@ -38,6 +37,15 @@ class Extension(ext.Extension):
         schema["display"] = config.String(choices=self.get_display_types().keys())
         schema["rotation"] = config.Integer(choices=[0, 90, 180, 270])
         schema["idle_timeout"] = config.Integer(minimum=0)
+
+        schema["spi_port"] = config.Integer(choices=[0, 1])
+        schema["spi_chip_select_pin"] = config.Integer(choices=[0, 1])
+        schema["spi_data_command_pin"] = config.Integer(minimum=0)
+        schema["spi_reset_pin"] = config.Integer(minimum=0)
+        schema["width"] = config.Integer(minimum=1)
+        schema["height"] = config.Integer(minimum=1)
+        schema["backlight_pin"] = config.Integer(minimum=0)
+
         return schema
 
     def setup(self, registry):

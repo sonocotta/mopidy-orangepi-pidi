@@ -50,9 +50,9 @@ Configuration
 Before starting Mopidy, you must add configuration for
 Mopidy-PiDi to your Mopidy configuration file::
 
-    [pidi]
+    [orangepi-pidi]
     enabled = true
-    display = st7789
+    display = opi.st7789
 
 This example uses st7789 provided by pidi-display-st7789
 
