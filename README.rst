@@ -25,11 +25,10 @@ Mopidy-PiDi to your Mopidy configuration file::
     enabled = true
     display = opi.st7789
 
-This example uses st7789 provided by OrangePi.PidiPlugins
+This example uses st7789 provided by OrangePi.PidiPlugins (installed automatically)
 
 Credits
 =======
 
 - Original author: `Phil Howard <https://github.com/pimoroni>`__
-- Current maintainer: `Phil Howard <https://github.com/pimoroni>`__
-- `Contributors <https://github.com/pimoroni/mopidy-pidi/graphs/contributors>`_
+- Current maintainer: `Andriy Malyshenko <https://github.com/sonocotta>`__
