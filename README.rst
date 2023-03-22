@@ -23,9 +23,9 @@ Mopidy-PiDi to your Mopidy configuration file::
 
     [orangepi-pidi]
     enabled = true
-    display = opi.st7789
+    display = opi.ili9341
 
-This example uses st7789 provided by OrangePi.PidiPlugins (installed automatically)
+This example uses ili9341 provided by OrangePi.PidiPlugins (installed automatically)
 
 Credits
 =======
