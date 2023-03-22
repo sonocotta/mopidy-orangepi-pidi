@@ -17,14 +17,14 @@ logger = logging.getLogger(__name__)
 
 class PiDiConfig:
     def __init__(self, config=None):
-        self.rotation = config.get("rotation", 0)
+        self.rotation = config.get("rotation", 90)
         self.spi_port = config.get("spi_port", 0)
         self.spi_chip_select_pin = config.get("spi_chip_select_pin", 0)
         self.spi_data_command_pin = config.get("spi_data_command_pin", 27)
         self.spi_reset_pin = config.get("spi_reset_pin", 17)
         self.backlight_pin = config.get("backlight_pin", 22)
-        self.width = config.get("width", 0)
-        self.height = config.get("height", 0)        
+        self.width = config.get("width", 240)
+        self.height = config.get("height", 320)        
         self.spi_speed_mhz = 80
         self.blur_album_art = True
 
